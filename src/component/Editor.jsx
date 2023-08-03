@@ -1,7 +1,9 @@
 import React from 'react';
 import {Box,styled}from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import {Controlled as ControlledEditor} from "react-codemirror2";
+import {Controlled as CodeMirror} from 'react-codemirror2';
+
+
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/mode/xml/xml';
@@ -52,7 +54,7 @@ const Editor = () => {
           </Heading>
           <ArrowDropDownIcon/>
         </Header>
-        <ControlledEditor/>
+        <CodeMirror/>
     </Box>
     </>
   );

@@ -4,10 +4,11 @@ import Code from './Code';
 
 const Home = () => {
   return (
-   <>
+   <div>
       <Header/>
       <Code/>
-      </>
+      </div>
+  
 
   );
 }
