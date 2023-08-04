@@ -1,16 +1,12 @@
 import React from 'react';
 import {Box,styled}from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import {Controlled as CodeMirror} from 'react-codemirror2';
-
-
+import {Controlled as ControlledEditor} from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-import 'codemirror/mode/xml/xml';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/css/css';
-
-
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/css/css'
 
 const Heading=styled(Box)
 (
@@ -35,7 +31,7 @@ fontWeight:700,
 justifyContent:'space-between',
 })
 
-const Editor = () => {
+const Editor = ({heading,icon}) => {
   return (
     <>
     <Box>
@@ -50,11 +46,15 @@ const Editor = () => {
           paddingBottom:4 , 
           borderRadius:5,
           marginRight:5,
-         placeContent: 'center', }}>/ </Box>Html
+         placeContent: 'center', }}>/ </Box>{heading}
           </Heading>
           <ArrowDropDownIcon/>
         </Header>
-        <CodeMirror/>
+       <ControlledEditor options={{
+        theme:"material",
+        lineNumbers:true,
+  
+       }}/>
     </Box>
     </>
   );

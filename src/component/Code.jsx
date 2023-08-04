@@ -1,14 +1,18 @@
 import React from 'react';
 import Editor from './Editor';
 
+
 const Code = () => {
   return (
    <>
-<Editor/>
-<Editor/>
-<Editor/>
+   <div>
 
+   </div>
+<Editor heading={'html'} icon={"/"}/>
+<Editor heading={'css'} icon={"*"}/>
+<Editor heading={'javascript'} icon={"()"}/>
    </>
+
   );
 }
 
