@@ -1,27 +1,34 @@
 import React, {useState } from 'react';
 import { createContext } from 'react';
+import PropTypes from 'prop-types';
 
-const DataContext= createContext('');
+
+ export const DataContext= createContext('');
+ 
+
 
 
 const DataProvider = ({children}) => {
 
-const[Html,SetHtml]=useState('');
-const[Css,SetCss]=useState('');
-const[Js,SetJs]=useState('');
+const[html,setHtml]=useState('');
+const[css,setCss]=useState('');
+const[js,setJs]=useState('');
 
   return (
-    <DataContext.Provider value={
+    <DataContext.Provider value={ 
       {
         //state expoirt
-        Html,SetHtml,
-        Css,SetCss,
-        Js,SetJs,
+        html,setHtml,
+        css,setCss,
+        js,setJs,
       }
     }
     >{children}
     </DataContext.Provider>
   )
 }
+DataProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default DataProvider;
