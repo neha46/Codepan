@@ -8,6 +8,7 @@ import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 
 const Container=styled(Box)(
@@ -45,12 +46,15 @@ justifyContent:'space-between',
 
 const Editor = ({heading,icon,color, value, onChange}) =>
  {
+  console.log(value);
+  const [open,setOpen]=useState(true)
   const handleChange=(editor,data,value)=>{
 onChange(value);
   }
+
   return (
     <>
-    <Container>
+    <Container style={open?null:{flexGrow:0}}>
       <Header> 
             <Heading>
               <Box 
@@ -64,8 +68,10 @@ onChange(value);
           marginRight:5,
          placeContent: 'center', }}>/</Box>{heading}
           </Heading>
-          <ArrowDropDownIcon/>
+          <ArrowDropDownIcon   fontSize='small' style={{alignSelf:'center' }}
+          onClick={()=>setOpen(prevState=> !prevState)}/>
         </Header>
+      
 
 
        <ControlledEditor  

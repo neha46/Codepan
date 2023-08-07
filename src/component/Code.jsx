@@ -18,6 +18,7 @@ const Code = () => {
   const {html,setHtml,
     css,setCss,
     js,setJs,}=useContext(DataContext);
+   
 
 
   return (
